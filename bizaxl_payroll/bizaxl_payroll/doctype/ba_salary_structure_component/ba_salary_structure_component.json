@@ -1,0 +1,16 @@
+{
+ "name": "BA Salary Structure Component",
+ "doctype": "DocType",
+ "module": "BizAxl Payroll",
+ "istable": 1,
+ "fields": [
+  {"fieldname": "salary_component", "fieldtype": "Link", "label": "Component", "options": "BA Salary Component", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "abbr", "fieldtype": "Data", "label": "Abbr", "fetch_from": "salary_component.abbr", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "component_type", "fieldtype": "Select", "label": "Type", "options": "Earning\nDeduction", "fetch_from": "salary_component.component_type", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "col1", "fieldtype": "Column Break"},
+  {"fieldname": "amount_based_on_formula", "fieldtype": "Check", "label": "Formula Based"},
+  {"fieldname": "formula", "fieldtype": "Code", "label": "Formula", "depends_on": "amount_based_on_formula"},
+  {"fieldname": "amount", "fieldtype": "Currency", "label": "Amount", "depends_on": "eval:!doc.amount_based_on_formula"}
+ ],
+ "permissions": []
+}

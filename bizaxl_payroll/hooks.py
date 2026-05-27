@@ -3,8 +3,9 @@ app_title = "BizAxl Payroll"
 app_publisher = "BizAxl"
 app_description = "Payroll Management for BizAxl"
 app_email = "dev@bizaxl.com"
-app_license = "mit"
-
+app_license = "MIT"
+app_version = "1.0.0"
+required_apps = ["frappe", "bizaxl_erp", "bizaxl_hr"]
 # Apps
 # ------------------
 

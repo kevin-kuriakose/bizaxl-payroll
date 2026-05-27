@@ -1,0 +1,25 @@
+{
+ "name": "BA Salary Structure Assignment",
+ "doctype": "DocType",
+ "module": "BizAxl Payroll",
+ "naming_rule": "By \"Naming Series\" field",
+ "autoname": "naming_series",
+ "fields": [
+  {"fieldname": "naming_series", "fieldtype": "Select", "label": "Series", "options": "BA-SSA-.YYYY.-", "reqd": 1},
+  {"fieldname": "employee", "fieldtype": "Link", "label": "Employee", "options": "BA Employee", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "employee_name", "fieldtype": "Data", "label": "Employee Name", "fetch_from": "employee.employee_name", "read_only": 1},
+  {"fieldname": "col1", "fieldtype": "Column Break"},
+  {"fieldname": "salary_structure", "fieldtype": "Link", "label": "Salary Structure", "options": "BA Salary Structure", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "from_date", "fieldtype": "Date", "label": "From Date", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "sec_salary", "fieldtype": "Section Break", "label": "Salary Details"},
+  {"fieldname": "base", "fieldtype": "Currency", "label": "Base Salary", "reqd": 1},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "BA Company", "reqd": 1},
+  {"fieldname": "col2", "fieldtype": "Column Break"},
+  {"fieldname": "currency", "fieldtype": "Link", "label": "Currency", "options": "BA Currency"}
+ ],
+ "permissions": [
+  {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "HR Manager", "read": 1, "write": 1, "create": 1},
+  {"role": "HR User", "read": 1}
+ ]
+}

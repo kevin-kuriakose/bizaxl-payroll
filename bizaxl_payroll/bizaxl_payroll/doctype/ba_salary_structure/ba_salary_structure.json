@@ -1,0 +1,27 @@
+{
+ "name": "BA Salary Structure",
+ "doctype": "DocType",
+ "module": "BizAxl Payroll",
+ "naming_rule": "By fieldname",
+ "autoname": "field:structure_name",
+ "fields": [
+  {"fieldname": "structure_name", "fieldtype": "Data", "label": "Structure Name", "reqd": 1, "unique": 1},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "BA Company", "reqd": 1},
+  {"fieldname": "col1", "fieldtype": "Column Break"},
+  {"fieldname": "payroll_frequency", "fieldtype": "Select", "label": "Payroll Frequency", "options": "Monthly\nBimonthly\nFortnightly\nWeekly\nDaily", "reqd": 1, "default": "Monthly"},
+  {"fieldname": "currency", "fieldtype": "Link", "label": "Currency", "options": "BA Currency"},
+  {"fieldname": "sec_earnings", "fieldtype": "Section Break", "label": "Earnings"},
+  {"fieldname": "earnings", "fieldtype": "Table", "label": "Earnings", "options": "BA Salary Structure Component"},
+  {"fieldname": "sec_deductions", "fieldtype": "Section Break", "label": "Deductions"},
+  {"fieldname": "deductions", "fieldtype": "Table", "label": "Deductions", "options": "BA Salary Structure Component"},
+  {"fieldname": "sec_account", "fieldtype": "Section Break", "label": "Accounting"},
+  {"fieldname": "salary_payable_account", "fieldtype": "Link", "label": "Salary Payable Account", "options": "BA Account"},
+  {"fieldname": "salary_expense_account", "fieldtype": "Link", "label": "Salary Expense Account", "options": "BA Account"},
+  {"fieldname": "is_active", "fieldtype": "Check", "label": "Is Active", "default": "1"}
+ ],
+ "permissions": [
+  {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "HR Manager", "read": 1, "write": 1, "create": 1},
+  {"role": "HR User", "read": 1}
+ ]
+}

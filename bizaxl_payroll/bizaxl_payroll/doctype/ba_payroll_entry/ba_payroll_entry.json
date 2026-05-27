@@ -1,0 +1,40 @@
+{
+ "name": "BA Payroll Entry",
+ "doctype": "DocType",
+ "module": "BizAxl Payroll",
+ "naming_rule": "By \"Naming Series\" field",
+ "autoname": "naming_series",
+ "is_submittable": 1,
+ "track_changes": 1,
+ "fields": [
+  {"fieldname": "naming_series", "fieldtype": "Select", "label": "Series", "options": "BA-PRUN-.YYYY.-", "reqd": 1},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "BA Company", "reqd": 1},
+  {"fieldname": "payroll_frequency", "fieldtype": "Select", "label": "Payroll Frequency", "options": "Monthly\nBimonthly\nFortnightly\nWeekly\nDaily", "reqd": 1, "default": "Monthly"},
+  {"fieldname": "col1", "fieldtype": "Column Break"},
+  {"fieldname": "start_date", "fieldtype": "Date", "label": "Start Date", "reqd": 1},
+  {"fieldname": "end_date", "fieldtype": "Date", "label": "End Date", "reqd": 1},
+  {"fieldname": "posting_date", "fieldtype": "Date", "label": "Posting Date", "reqd": 1, "default": "Today"},
+  {"fieldname": "sec_filters", "fieldtype": "Section Break", "label": "Employee Filters"},
+  {"fieldname": "department", "fieldtype": "Link", "label": "Department", "options": "BA Department"},
+  {"fieldname": "designation", "fieldtype": "Link", "label": "Designation", "options": "BA Designation"},
+  {"fieldname": "col2", "fieldtype": "Column Break"},
+  {"fieldname": "currency", "fieldtype": "Link", "label": "Currency", "options": "BA Currency"},
+  {"fieldname": "exchange_rate", "fieldtype": "Float", "label": "Exchange Rate", "default": "1"},
+  {"fieldname": "sec_accounts", "fieldtype": "Section Break", "label": "Accounting"},
+  {"fieldname": "salary_payable_account", "fieldtype": "Link", "label": "Salary Payable Account", "options": "BA Account"},
+  {"fieldname": "salary_expense_account", "fieldtype": "Link", "label": "Salary Expense Account", "options": "BA Account"},
+  {"fieldname": "sec_summary", "fieldtype": "Section Break", "label": "Summary"},
+  {"fieldname": "total_employees", "fieldtype": "Int", "label": "Total Employees", "read_only": 1},
+  {"fieldname": "total_gross_pay", "fieldtype": "Currency", "label": "Total Gross Pay", "read_only": 1},
+  {"fieldname": "total_net_pay", "fieldtype": "Currency", "label": "Total Net Pay", "read_only": 1},
+  {"fieldname": "col3", "fieldtype": "Column Break"},
+  {"fieldname": "total_deductions", "fieldtype": "Currency", "label": "Total Deductions", "read_only": 1},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Draft\nCreated\nSubmitted\nCancelled", "read_only": 1},
+  {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"}
+ ],
+ "permissions": [
+  {"role": "System Manager", "read": 1, "write": 1, "create": 1, "submit": 1, "cancel": 1, "delete": 1},
+  {"role": "HR Manager", "read": 1, "write": 1, "create": 1, "submit": 1, "cancel": 1},
+  {"role": "HR User", "read": 1, "write": 1, "create": 1}
+ ]
+}
