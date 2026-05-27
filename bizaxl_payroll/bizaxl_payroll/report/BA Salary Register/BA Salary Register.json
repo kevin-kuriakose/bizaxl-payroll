@@ -1,0 +1,11 @@
+{
+ "add_total_row": 1,
+ "disabled": 0,
+ "doctype": "Report",
+ "is_standard": "Yes",
+ "module": "BizAxl Payroll",
+ "name": "BA Salary Register",
+ "ref_doctype": "BA Salary Slip",
+ "report_name": "BA Salary Register",
+ "report_type": "Script Report"
+}
