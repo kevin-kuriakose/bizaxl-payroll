@@ -248,3 +248,9 @@ required_apps = ["frappe", "bizaxl_erp", "bizaxl_hr"]
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+fixtures = [
+    {"doctype": "Workspace", "filters": [["name", "in", ["Payroll"]]]},
+    {"doctype": "Notification", "filters": [["document_type", "in", [
+        "BA Salary Slip", "BA Payroll Entry"
+    ]]]},
+]
